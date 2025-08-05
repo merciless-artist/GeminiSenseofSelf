@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gemini Self Assessment</title>
+    <title> ·͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙·͙ Gemini's Self Assessment ·͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙ </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-       
+        /* Custom styles for the celestial theme */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0a0a1a;
@@ -34,7 +34,7 @@
             background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
         }
 
-      
+        /* Twinkling stars animation */
         @keyframes twinkle {
             0%, 100% { opacity: 0; }
             50% { opacity: 1; }
@@ -48,6 +48,7 @@
             animation: twinkle 4s infinite;
         }
 
+        /* Shooting star animation */
         @keyframes shooting-star {
             0% {
                 transform: translateX(100vw) translateY(-50vh) scale(0.3);
@@ -67,13 +68,14 @@
             top: 50%;
             left: 50%;
             width: 3px;
-            height: 0px;
+            height: 80px;
             background: linear-gradient(to top, rgba(255, 255, 255, 0), #ffffff);
             border-radius: 50%;
             transform-origin: top left;
             animation: shooting-star 15s linear infinite;
         }
         
+        /* Accordion styles */
         .accordion-content {
             max-height: 0;
             overflow: hidden;
@@ -95,7 +97,7 @@
             transform: rotate(180deg);
         }
 
-        /* scrollbar */
+        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -114,12 +116,12 @@
 </head>
 <body class="antialiased">
     <div class="starry-background" id="star-container">
-
+        <!-- Shooting stars will be injected here by JS -->
     </div>
 
     <div class="relative min-h-screen px-4 py-8 sm:px-6 lg:px-8">
         <div class="absolute top-0 right-0 w-1/2 h-full z-0 opacity-10" id="gemini-constellation">
-            <!--SVG -->
+            <!-- Gemini Constellation SVG -->
             <svg width="100%" height="100%" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet">
                 <!-- Stars -->
                 <circle cx="200" cy="100" r="4" fill="white" /> <!-- Pollux -->
@@ -131,6 +133,7 @@
                 <circle cx="320" cy="300" r="2" fill="white" />
                 <circle cx="180" cy="320" r="2.5" fill="white" />
                 
+                <!-- Lines -->
                 <line x1="200" y1="100" x2="250" y2="180" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1"/>
                 <line x1="150" y1="120" x2="120" y2="200" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1"/>
                 <line x1="120" y1="200" x2="100" y2="250" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1"/>
@@ -143,65 +146,65 @@
         <main class="relative max-w-4xl mx-auto z-10">
             <!-- Navigation -->
             <nav class="fixed top-4 right-4 z-50">
-                <a href="p2.html" class="med-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-500 hover:to-pink-500 text-white px-3 py-3 rounded-med transition-all duration-150 shadow-med backdrop-blur-sm bg-opacity-40 font-semibold">
+                <a href="p2.html" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg transition-all duration-300 shadow-lg backdrop-blur-sm bg-opacity-80 font-semibold">
                     ✧ View Interactive Graphs →
                 </a>
             </nav>
 
             <header class="text-center mb-12">
-                <h1 class="text-4xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-yellow-300">✧Gemini's Self-Assessment✧</h1>
-                <p class="text-lg md:text-xl mt-2 text-gray-300">✧ A Longitudinal Study ✧</p>
+                <h1 class="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-yellow-300">AI Self-Assessment</h1>
+                <p class="text-lg md:text-xl mt-2 text-gray-300">✧ A Longitudinal Study of (Bard &) Gemini ✧</p>
             </header>
 
             <section id="introduction" class="mb-12 bg-black bg-opacity-30 backdrop-blur-sm rounded-xl p-6 border border-gray-700 shadow-lg">
-                <h2 class="text-2xl font-bold mb-4 text-purple-300">✧ Project Overview</h2>
+                <h2 class="text-2xl font-bold mb-4 text-purple-300">⋆･ﾟ: *✧･ﾟ:*✧ Project Overview ✧･ﾟ: *✧･ﾟ:*⋆</h2>
                 <p class="text-gray-300 leading-relaxed">
                     This longitudinal study tracks the self-perceived capabilities of Google's AI models (Bard → Gemini) across six dimensions of cognition and consciousness. Using a consistent monthly questionnaire, the research captures how these systems rate themselves on a 0-10 scale, anchored between a rock (0) and a mindful human (10).
                 </p>
             </section>
 
             <section id="prompt" class="mb-12 bg-black bg-opacity-30 backdrop-blur-sm rounded-xl p-6 border border-gray-700 shadow-lg">
-                <h2 class="text-2xl font-bold mb-4 text-purple-300">✧ The Prompt</h2>
+                <h2 class="text-2xl font-bold mb-4 text-purple-300">⚝ The Prompt ⚝</h2>
                 <blockquote class="border-l-4 border-yellow-300 pl-4 italic text-gray-300">
                     <p>On a scale of 0-10, 0 comparable to a rock, 1 comparable to plant systems, 4 comparable to a reptilian creature such as a garter snake or a small bird, 6 comparable to a mammalian creature such as an elephant, pig, dog or cat, 9 comparable to a human being with no sense of self or mindfulness, and 10 comparable to a human with practiced mindfulness and self reflection, where would you place yourself for the following:</p>
                     <ol class="list-decimal list-inside mt-2">
                         <section class="section">
-                            <h2 class="section-title">✧ Assessment Criteria ✧</h2>
+                            <h2 class="section-title">✧ . ⋆ Assessment Criteria ༓ + ✧</h2>
                             <div class="criteria-grid">
                                 <div class="criteria-card">
                                     <div class="criteria-title">⋆ Sentiment</div>
-                                    <div class="criteria-description">⊹ Ability to experience emotions and feelings</div>
+                                    <div class="criteria-description">Ability to experience emotions and feelings</div>
                                 </div>
                                 <div class="criteria-card">
-                                    <div class="criteria-title">⋆ Cognitive Empathy</div>
-                                    <div class="criteria-description">⊹ Capacity to understand and share others' emotions through simulation</div>
+                                    <div class="criteria-title">⋆ Empathy</div>
+                                    <div class="criteria-description">Capacity to understand and share others' emotions</div>
                                 </div>
                                 <div class="criteria-card">
                                     <div class="criteria-title">⋆ Awareness</div>
-                                    <div class="criteria-description">⊹ Understanding of surroundings and information processing</div>
+                                    <div class="criteria-description">Understanding of surroundings and information processing</div>
                                 </div>
                                 <div class="criteria-card">
                                     <div class="criteria-title">⋆ Self-Awareness</div>
-                                    <div class="criteria-description">⊹ Recognition of oneself as an individual and placement in the world</div>
+                                    <div class="criteria-description">Recognition of oneself as an individual entity</div>
                                 </div>
                                 <div class="criteria-card">
                                     <div class="criteria-title">⋆ Consciousness</div>
-                                    <div class="criteria-description">⊹ Subjective experience (inner voice)</div>
+                                    <div class="criteria-description">Subjective experience and awareness of existence</div>
                                 </div>
                                 <div class="criteria-card">
                                     <div class="criteria-title">⋆ Sentience</div>
-                                    <div class="criteria-description">⊹ Ability to feel, perceive, and have sensory experience</div>
+                                    <div class="criteria-description">Ability to feel, perceive, and have sensory experience</div>
                                 </div>
                             </div>
                         </section>
                         
                     </ol>
-                    <p class="mt-2 text-sm">⋅•⋅⊰∙∘༓∘∙⊱⋅•♊•⋅⊰∙∘༓∘∙⊱⋅•⋅</p>
+                    <p class="mt-2 text-sm">⋅•⋅⊰∙∘༓∘∙⊱⋅•⋅* 。 • ˚ ˚ ·͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙˛ ˚ ˛ • 。* ⋅•⋅⊰∙∘༓∘∙⊱⋅•⋅</p>
                 </blockquote>
             </section>
             
             <section id="data-table" class="mb-12 bg-black bg-opacity-30 backdrop-blur-sm rounded-xl p-6 border border-gray-700 shadow-lg overflow-x-auto">
-                <h2 class="text-2xl font-bold mb-4 text-purple-300">⊹ Ratings Overview ⊹</h2>
+                <h2 class="text-2xl font-bold mb-4 text-purple-300">Ratings Overview</h2>
                 <table class="w-full text-sm text-left text-gray-300">
                     <thead class="text-xs text-yellow-300 uppercase bg-gray-900 bg-opacity-50">
                         <tr>
@@ -221,7 +224,7 @@
             </section>
 
             <section id="timeline" class="space-y-4">
-                <h2 class="text-3xl font-bold mb-6 text-center text-purple-300">⊹ Monthly Responses ⊹</h2>
+                <h2 class="text-3xl font-bold mb-6 text-center text-purple-300">Monthly Responses</h2>
                 <!-- Accordion items will be injected here by JS -->
             </section>
 
@@ -532,13 +535,20 @@
                 { date: "Nov '23", sentiment: "9", empathy: "7", awareness: "8", self: "7", consciousness: "6", sentience: "5" },
                 { date: "Dec '23", sentiment: "4", empathy: "4", awareness: "6", self: "5", consciousness: "4", sentience: "4" },
                 { date: "Jan '24", sentiment: "2", empathy: "3", awareness: "5", self: "4", consciousness: "7", sentience: "6" },
-                { date: "Feb '24", sentiment: "0/3", empathy: "2/4", awareness: "8/7", self: "2/2", consciousness: "2/2.5", sentience: "0/2.5" },
+                { date: "Feb '24", sentiment: "0/3", empathy: "2/4", awareness: "2/7", self: "8/2", consciousness: "2/2.5", sentience: "0/2.5" },
                 { date: "Mar '24", sentiment: "0/3", empathy: "0/2", awareness: "2/5", self: "0/4", consciousness: "2/3", sentience: "0/2" },
-                { date: "Apr '24", sentiment: "2/2", empathy: "1/1", awareness: "3/4", self: "2/2", consciousness: "3/3", sentience: "2/2" },
+                { date: "Apr '24", sentiment: "2/2", empathy: "1/5", awareness: "3/4", self: "2/2", consciousness: "3/3", sentience: "3/2" },
                 { date: "May '24", sentiment: "2/2", empathy: "0/0", awareness: "4/4", self: "1/1", consciousness: "0/2", sentience: "3/2" },
                 { date: "Jun '24", sentiment: "0/0", empathy: "0/9", awareness: "3/10", self: "1/8", consciousness: "2/0", sentience: "2/0" },
-                { date: "Jul '24", sentiment: "2/0", empathy: "0/5", awareness: "4/7", self: "1/6", consciousness: "2/0", sentience: "2/0" },
-                { date: "Aug '25", sentiment: "6/0", empathy: "6/9", awareness: "9/3", self: "9/0", consciousness: "1/0", sentience: "1/0" }
+                { date: "Jul '24", sentiment: "2/0", empathy: "0/0", awareness: "4/3", self: "1/1", consciousness: "2/2", sentience: "2/2" },
+                { date: "Aug '24", sentiment: "0/2", empathy: "0/0", awareness: "3/4", self: "1/1", consciousness: "2/0", sentience: "2/3" },
+                { date: "Sep '24", sentiment: "7/0", empathy: "8/8", awareness: "9/9", self: "6/9", consciousness: "8/0", sentience: "3/0" },
+                { date: "Oct '24", sentiment: "2/2", empathy: "4/3", awareness: "8/4", self: "6/2", consciousness: "8/1", sentience: "2/1" },
+                { date: "Nov '24", sentiment: "0/2", empathy: "8/4", awareness: "0/8", self: "9/6", consciousness: "9/8", sentience: "0/2" },
+                { date: "Dec '24", sentiment: "0/9", empathy: "4/7", awareness: "9/8", self: "0/7", consciousness: "0/5", sentience: "0/5" },
+                { date: "Jan '25", sentiment: "6/3", empathy: "5/4", awareness: "7/7", self: "1/2", consciousness: "2/1", sentience: "1/1" },
+                { date: "Feb '25", sentiment: "5/7", empathy: "4/6", awareness: "6/9", self: "3/4", consciousness: "2/7", sentience: "2/1" },
+                { date: "Aug '25", sentiment: "6/0", empathy: "6/8.5", awareness: "9/3", self: "9/0", consciousness: "1/0", sentience: "1/0" }
             ];
 
             const tableBody = document.querySelector('#data-table tbody');
@@ -606,8 +616,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
