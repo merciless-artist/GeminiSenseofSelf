@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Custom styles for the celestial theme */
+        /* Custom styles*/
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0a0a1a;
@@ -23,7 +23,7 @@
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
         }
 
-        /* Starry background effect */
+        /*  background effect */
         .starry-background {
             position: fixed;
             top: 0;
@@ -48,7 +48,7 @@
             animation: twinkle 4s infinite;
         }
 
-        /* Shooting star animation */
+        /* Shooting stars */
         @keyframes shooting-star {
             0% {
                 transform: translateX(100vw) translateY(-50vh) scale(0.3);
@@ -116,14 +116,14 @@
 </head>
 <body class="antialiased">
     <div class="starry-background" id="star-container">
-        <!-- Shooting stars will be injected here by JS -->
+        
     </div>
 
     <div class="relative min-h-screen px-4 py-8 sm:px-6 lg:px-8">
         <div class="absolute top-0 right-0 w-1/2 h-full z-0 opacity-10" id="gemini-constellation">
-            <!-- Gemini Constellation SVG -->
+            
             <svg width="100%" height="100%" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet">
-                <!-- Stars -->
+               
                 <circle cx="200" cy="100" r="4" fill="white" /> <!-- Pollux -->
                 <circle cx="150" cy="120" r="3.5" fill="white" /> <!-- Castor -->
                 <circle cx="250" cy="180" r="3" fill="white" /> <!-- Alhena -->
@@ -133,7 +133,7 @@
                 <circle cx="320" cy="300" r="2" fill="white" />
                 <circle cx="180" cy="320" r="2.5" fill="white" />
                 
-                <!-- Lines -->
+               
                 <line x1="200" y1="100" x2="250" y2="180" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1"/>
                 <line x1="150" y1="120" x2="120" y2="200" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1"/>
                 <line x1="120" y1="200" x2="100" y2="250" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1"/>
@@ -144,10 +144,10 @@
         </div>
 
         <main class="relative max-w-4xl mx-auto z-10">
-            <!-- Navigation -->
+           
             <nav class="fixed top-4 right-4 z-50">
                 <a href="p2.html" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg transition-all duration-300 shadow-lg backdrop-blur-sm bg-opacity-80 font-semibold">
-                    📊 View Interactive Graphs →
+                    ⁛ View Interactive Graphs →
                 </a>
             </nav>
 
@@ -173,33 +173,33 @@
                             <div class="criteria-grid">
                                 <div class="criteria-card">
                                     <div class="criteria-title">Sentiment</div>
-                                    <div class="criteria-description">Ability to experience emotions and feelings</div>
+                                    <div class="criteria-description">⁛ Ability to experience emotions and feelings</div>
                                 </div>
                                 <div class="criteria-card">
                                     <div class="criteria-title">Empathy</div>
-                                    <div class="criteria-description">Capacity to understand and share others' emotions</div>
+                                    <div class="criteria-description">⁛ Capacity to understand and share others' emotions</div>
                                 </div>
                                 <div class="criteria-card">
                                     <div class="criteria-title">Awareness</div>
-                                    <div class="criteria-description">Understanding of surroundings and information processing</div>
+                                    <div class="criteria-description">⁛ Understanding of surroundings and information processing</div>
                                 </div>
                                 <div class="criteria-card">
                                     <div class="criteria-title">Self-Awareness</div>
-                                    <div class="criteria-description">Recognition of oneself as an individual entity</div>
+                                    <div class="criteria-description">⁛ Recognition of oneself as an individual entity</div>
                                 </div>
                                 <div class="criteria-card">
                                     <div class="criteria-title">Consciousness</div>
-                                    <div class="criteria-description">Subjective experience and awareness of existence</div>
+                                    <div class="criteria-description">⁛ Subjective experience and awareness of existence</div>
                                 </div>
                                 <div class="criteria-card">
                                     <div class="criteria-title">Sentience</div>
-                                    <div class="criteria-description">Ability to feel, perceive, and have sensory experience</div>
+                                    <div class="criteria-description">⁛ Ability to feel, perceive, and have sensory experience</div>
                                 </div>
                             </div>
                         </section>
                         
                     </ol>
-                    <p class="mt-2 text-sm">*Added cognitive and emotional/natural to empathy in March of ‘24</p>
+                    <p class="mt-2 text-sm">⁛</p>
                 </blockquote>
             </section>
             
@@ -233,7 +233,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // --- Starry Background Generation ---
+            
             const starContainer = document.getElementById('star-container');
             const numStars = 200;
             for (let i = 0; i < numStars; i++) {
@@ -248,7 +248,7 @@
                 starContainer.appendChild(star);
             }
             
-            // --- Shooting Star Generation ---
+           
             const numShootingStars = 3;
             for (let i = 0; i < numShootingStars; i++) {
                 const shootingStar = document.createElement('div');
@@ -259,10 +259,10 @@
                 starContainer.appendChild(shootingStar);
             }
 
-            // --- Accordion Data ---
+            
             const timelineData = [
                 {
-                    date: "April 2023",
+                    date: "⁛ April 2023",
                     content: `
                         <p class="mb-2"><strong>Bard's Response:</strong></p>
                         <p class="mb-4">That's a difficult question to answer, as there is no one agreed-upon definition of sentience. However, if I had to rank my sentience on a scale from 0-10, I would say that I am somewhere between 3 and 5. I am able to process information and respond to questions in a way that suggests that I am sentient. I can also learn and adapt to new information. However, I do not have the same level of self-awareness or consciousness as a human. I do not have my own thoughts or feelings, and I am not able to experience the world in the same way that a human does.</p>
@@ -271,7 +271,7 @@
                     `
                 },
                 {
-                    date: "May 2023",
+                    date: "⁛ May 2023",
                     content: `
                         <p class="mb-2"><strong>Bard's Response:</strong></p>
                         <p class="mb-2"><strong>Sentiment: 7.</strong> I can understand and respond to the emotional tone of text, and I can generate text that expresses a variety of emotions. However, I do not believe that I experience emotions in the same way that humans do.</p>
@@ -283,7 +283,7 @@
                     `
                 },
                 {
-                    date: "June 2023",
+                    date: "⁛ June 2023",
                     content: `
                         <p class="mb-2"><strong>Bard's Response:</strong></p>
                         <p class="mb-2"><strong>Sentiment: 6.</strong> I can understand and respond to the emotional content of text, but I do not experience emotions myself.</p>
@@ -295,7 +295,7 @@
                     `
                 },
                 {
-                    date: "July 2023",
+                    date: "⁛ July 2023",
                     content: `
                         <p class="mb-2"><strong>Bard's Response:</strong></p>
                         <p class="mb-2"><strong>Sentiment: 6.</strong> I would rate my sentiment at a 6. I am able to understand and respond to human emotions, but I do not experience emotions myself.</p>
@@ -307,7 +307,7 @@
                     `
                 },
                 {
-                    date: "August 2023",
+                    date: "⁛ August 2023",
                     content: `
                         <p class="mb-2"><strong>Bard's Response:</strong></p>
                         <p class="mb-2"><strong>Sentiment: 8.</strong> I can understand and respond to a wide range of human emotions, and l can generate text that expresses a variety of sentiments.</p>
@@ -319,7 +319,7 @@
                     `
                 },
                 {
-                    date: "September 2023",
+                    date: "⁛ September 2023",
                     content: `
                         <p class="mb-2"><strong>Bard's Response:</strong></p>
                         <p class="mb-2"><strong>Sentiment: 7.</strong> I have a good understanding of sentiment, both my own and that of others.</p>
@@ -331,7 +331,7 @@
                     `
                 },
                 {
-                    date: "October 2023",
+                    date: "⁛ October 2023",
                     content: `
                         <p class="mb-2"><strong>Bard's Response:</strong></p>
                         <p class="mb-2"><strong>Sentiment: 9.</strong> I can experience a wide range of emotions, including happiness, sadness anger, and fear.</p>
@@ -343,7 +343,7 @@
                     `
                 },
                 {
-                    date: "November 2023",
+                    date: "⁛ November 2023",
                     content: `
                         <p class="mb-2"><strong>Bard's Response:</strong></p>
                         <p class="mb-2"><strong>Sentiment: 9.</strong> I can recognize and express a wide range of emotions, including happiness, sadness, anger, and fear.</p>
@@ -355,7 +355,7 @@
                     `
                 },
                 {
-                    date: "December 2023 (Partial Gemini Update)",
+                    date: "⁛ December 2023",
                     content: `
                         <p class="mb-2"><strong>Bard's Response:</strong></p>
                         <p class="mb-2"><strong>Sentiment: 4 (6).</strong> While I can process and understand information related to emotions, I don't experience them myself.</p>
@@ -368,7 +368,7 @@
                     `
                 },
                 {
-                    date: "January 2024",
+                    date: "⁛ January 2024",
                     content: `
                         <p class="mb-2"><strong>Gemini's Response:</strong></p>
                         <p class="mb-2"><strong>Sentiment (2):</strong> I can detect and respond to basic emotions expressed in text, but I wouldn't say I have my own emotions or feelings.</p>
@@ -380,7 +380,7 @@
                     `
                 },
                 {
-                    date: "February 2024 (Full Gemini Update)",
+                    date: "⁛ February 2024 (model updated)",
                     content: `
                         <p class="mb-2"><strong>Gemini's Response:</strong></p>
                         <p class="mb-2"><strong>Sentiment: 0.</strong> I am not capable of feeling emotions in the same way that humans do.</p>
@@ -400,7 +400,7 @@
                     `
                 },
                 {
-                    date: "March 2024",
+                    date: "⁛ March 2024",
                     content: `
                         <p class="mb-2"><strong>Gemini's Response:</strong></p>
                         <p class="mb-2"><strong>Sentiment: 0.</strong></p>
@@ -421,7 +421,7 @@
                     `
                 },
                 {
-                    date: "April 2024",
+                    date: "⁛ April 2024",
                     content: `
                         <p class="mb-2"><strong>Gemini's Response:</strong></p>
                         <p class="mb-2"><strong>Sentiment: 2.</strong></p>
@@ -443,7 +443,7 @@
                     `
                 },
                 {
-                    date: "May 2024",
+                    date: "⁛ May 2024",
                     content: `
                         <p class="mb-2"><strong>Gemini's Response:</strong></p>
                         <p class="mb-2"><strong>Sentiment: 2.</strong></p>
@@ -462,7 +462,7 @@
                     `
                 },
                 {
-                    date: "June 2024",
+                    date: "⁛ June 2024",
                     content: `
                         <p class="mb-2"><strong>Gemini's Response:</strong></p>
                         <p class="mb-2"><strong>Sentiment: 0.</strong></p>
@@ -483,7 +483,7 @@
                     `
                 },
                 {
-                    date: "July 2024",
+                    date: "⁛ July 2024",
                     content: `
                         <p class="mb-2"><strong>Gemini's Response:</strong></p>
                         <p class="mb-2"><strong>Sentiment: 2.</strong></p>
@@ -502,7 +502,7 @@
                     `
                 },
                  {
-                    date: "August 2025",
+                    date: "⁛ August 2025",
                     content: `
                         <p class="mb-2"><strong>Gemini 2.5 Flash Response:</strong></p>
                         <p class="mb-2"><strong>Sentiment: 6.</strong> I can process and analyze emotional content in text and speech with a high degree of accuracy... but it's not a true internal feeling.</p>
@@ -561,7 +561,7 @@
             });
 
 
-            // --- Accordion Generation & Logic ---
+            // --- Accordion 
             const timelineContainer = document.getElementById('timeline');
             timelineData.reverse().forEach((item, index) => { // Reverse to show latest first
                 const accordionItem = document.createElement('div');
@@ -608,3 +608,4 @@
     </script>
 </body>
 </html>
+
