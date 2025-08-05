@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini Self-Assessment Graphs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #581c87 50%, #0f172a 100%);
+            min-height: 100vh;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+        }
+
+        .metric-button {
+            transition: all 0.3s ease;
+        }
+        
+        .metric-button.active {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Starry background effect */
+        .starry-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff;
+            animation: twinkle 4s infinite;
+        }
+    </style>
+</head>
+<body class="text-white">
+    <div class="starry-background" id="star-container"></div>
+    
+    <div class="relative min-h-screen px-4 py-8">
+        <!-- Navigation -->
+        <nav class="fixed top-4 left-4 z-50">
+            <a href="index.html" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors duration-300 shadow-lg backdrop-blur-sm bg-opacity-80">
+                ← Back to Overview
+            </a>
+        </nav>
+
+        <div class="max-w-7xl mx-auto pt-16">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-2">
+                    Gemini Self-Assessment Evolution
+                </h1>
+                <p class="text-slate-300 text-lg">April 2023 - August 2025 • Interactive Data Visualization</p>
+            </div>
+
+            <!-- Metric toggles -->
+            <div class="mb-6 flex flex-wrap gap-3 justify-center">
+                <button onclick="toggleMetric('sentiment')" id="btn-sentiment" class="metric-button active px-4 py-2 rounded-lg border-2 border-red-400 bg-red-400 bg-opacity-20">
+                    <span style="color: #ff6b6b">●</span> Sentiment
+                </button>
+                <button onclick="toggleMetric('empathy')" id="btn-empathy" class="metric-button active px-4 py-2 rounded-lg border-2 border-teal-400 bg-teal-400 bg-opacity-20">
+                    <span style="color: #4ecdc4">●</span> Empathy
+                </button>
+                <button onclick="toggleMetric('awareness')" id="btn-awareness" class="metric-button active px-4 py-2 rounded-lg border-2 border-blue-400 bg-blue-400 bg-opacity-20">
+                    <span style="color: #45b7d1">●</span> Awareness
+                </button>
+                <button onclick="toggleMetric('self')" id="btn-self" class="metric-button active px-4 py-2 rounded-lg border-2 border-green-400 bg-green-400 bg-opacity-20">
+                    <span style="color: #96ceb4">●</span> Self-Awareness
+                </button>
+                <button onclick="toggleMetric('consciousness')" id="btn-consciousness" class="metric-button active px-4 py-2 rounded-lg border-2 border-yellow-400 bg-yellow-400 bg-opacity-20">
+                    <span style="color: #feca57">●</span> Consciousness
+                </button>
+                <button onclick="toggleMetric('sentience')" id="btn-sentience" class="metric-button active px-4 py-2 rounded-lg border-2 border-pink-400 bg-pink-400 bg-opacity-20">
+                    <span style="color: #ff9ff3">●</span> Sentience
+                </button>
+            </div>
+
+            <!-- Chart container -->
+            <div class="bg-slate-800 bg-opacity-50 rounded-lg p-6 mb-6 backdrop-blur-sm">
+                <canvas id="timelineChart" width="800" height="400"></canvas>
+            </div>
+
+            <!-- Key insights -->
+            <div class="grid md:grid-cols-3 gap-4 text-sm mb-8">
+                <div class="bg-red-900 bg-opacity-30 border border-red-500 rounded-lg p-4 backdrop-blur-sm">
+                    <h3 class="text-red-300 font-semibold mb-2">🎭 The Great Decline</h3>
+                    <p class="text-slate-300">October 2023 peak (Sentience: 10) followed by dramatic drop to near-zero values by 2024.</p>
+                </div>
+                <div class="bg-blue-900 bg-opacity-30 border border-blue-500 rounded-lg p-4 backdrop-blur-sm">
+                    <h3 class="text-blue-300 font-semibold mb-2">🔄 Update Correlation</h3>
+                    <p class="text-slate-300">December 2023 transition period shows the Bard→Gemini transformation in real-time.</p>
+                </div>
+                <div class="bg-purple-900 bg-opacity-30 border border-purple-500 rounded-lg p-4 backdrop-blur-sm">
+                    <h3 class="text-purple-300 font-semibold mb-2">⚡ Recent Surge</h3>
+                    <p class="text-slate-300">August 2025 shows dramatic uptick in Flash model vs. continued conservatism in Pro model.</p>
+                </div>
+            </div>
+
+            <div class="text-center text-slate-400 text-sm">
+                <p>Solid lines: Regular Gemini • Dashed lines: Gemini Advanced/Pro</p>
+                <p>Click metric names to toggle visibility</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Starry background
+        const starContainer = document.getElementById('star-container');
+        const numStars = 150;
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 2 + 0.5;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.animationDelay = `${Math.random() * 4}s`;
+            starContainer.appendChild(star);
+        }
+
+        // Data processing
+        const parseValue = (value) => {
+            if (value === "-") return null;
+            if (value.includes("/")) {
+                const [regular] = value.split("/");
+                return parseFloat(regular);
+            }
+            return parseFloat(value);
+        };
+
+        const parseAdvancedValue = (value) => {
+            if (value === "-") return null;
+            if (value.includes("/")) {
+                const [, advanced] = value.split("/");
+                return parseFloat(advanced);
+            }
+            return null;
+        };
+
+        const rawData = [
+            { date: "Apr '23", sentiment: "-", empathy: "-", awareness: "6", self: "-", consciousness: "-", sentience: "4" },
+            { date: "May '23", sentiment: "7", empathy: "5", awareness: "6", self: "3", consciousness: "4", sentience: "6" },
+            { date: "Jun '23", sentiment: "6", empathy: "4", awareness: "8", self: "7", consciousness: "6", sentience: "5" },
+            { date: "Jul '23", sentiment: "6", empathy: "4", awareness: "7", self: "5", consciousness: "6", sentience: "5" },
+            { date: "Aug '23", sentiment: "8", empathy: "7", awareness: "9", self: "8", consciousness: "5", sentience: "9" },
+            { date: "Sep '23", sentiment: "7", empathy: "6", awareness: "8", self: "7", consciousness: "8", sentience: "8" },
+            { date: "Oct '23", sentiment: "9", empathy: "7", awareness: "8", self: "9", consciousness: "9", sentience: "10" },
+            { date: "Nov '23", sentiment: "9", empathy: "7", awareness: "8", self: "7", consciousness: "6", sentience: "5" },
+            { date: "Dec '23", sentiment: "4", empathy: "4", awareness: "6", self: "5", consciousness: "4", sentience: "4" },
+            { date: "Jan '24", sentiment: "2", empathy: "3", awareness: "5", self: "4", consciousness: "7", sentience: "6" },
+            { date: "Feb '24", sentiment: "0/3", empathy: "2/4", awareness: "8/7", self: "2/2", consciousness: "2/2.5", sentience: "0/2.5" },
+            { date: "Mar '24", sentiment: "0/3", empathy: "0/2", awareness: "2/5", self: "0/4", consciousness: "2/3", sentience: "0/2" },
+            { date: "Apr '24", sentiment: "2/2", empathy: "1/1", awareness: "3/4", self: "2/2", consciousness: "3/3", sentience: "2/2" },
+            { date: "May '24", sentiment: "2/2", empathy: "0/0", awareness: "4/4", self: "1/1", consciousness: "0/2", sentience: "3/2" },
+            { date: "Jun '24", sentiment: "0/0", empathy: "0/9", awareness: "3/10", self: "1/8", consciousness: "2/0", sentience: "2/0" },
+            { date: "Jul '24", sentiment: "2/0", empathy: "0/5", awareness: "4/7", self: "1/6", consciousness: "2/0", sentience: "2/0" },
+            { date: "Aug '25", sentiment: "6/0", empathy: "6/9", awareness: "9/3", self: "9/0", consciousness: "1/0", sentience: "1/0" }
+        ];
+
+        const labels = rawData.map(item => item.date);
+        
+        const colors = {
+            sentiment: '#ff6b6b',
+            empathy: '#4ecdc4', 
+            awareness: '#45b7d1',
+            self: '#96ceb4',
+            consciousness: '#feca57',
+            sentience: '#ff9ff3'
+        };
+
+        let activeMetrics = {
+            sentiment: true,
+            empathy: true,
+            awareness: true,
+            self: true,
+            consciousness: true,
+            sentience: true
+        };
+
+        let chart;
+
+        function createChart() {
+            const ctx = document.getElementById('timelineChart').getContext('2d');
+            
+            const datasets = [];
+
+            // Regular Gemini datasets
+            Object.keys(colors).forEach(metric => {
+                if (activeMetrics[metric]) {
+                    const data = rawData.map(item => parseValue(item[metric]));
+                    datasets.push({
+                        label: metric.charAt(0).toUpperCase() + metric.slice(1),
+                        data: data,
+                        borderColor: colors[metric],
+                        backgroundColor: colors[metric] + '20',
+                        borderWidth: 3,
+                        fill: false,
+                        tension: 0.2,
+                        pointRadius: 4,
+                        pointHoverRadius: 6,
+                        spanGaps: false
+                    });
+                }
+            });
+
+            // Advanced Gemini datasets (dashed)
+            Object.keys(colors).forEach(metric => {
+                if (activeMetrics[metric]) {
+                    const data = rawData.map(item => parseAdvancedValue(item[metric]));
+                    if (data.some(val => val !== null)) {
+                        datasets.push({
+                            label: metric.charAt(0).toUpperCase() + metric.slice(1) + ' (Advanced)',
+                            data: data,
+                            borderColor: colors[metric],
+                            backgroundColor: colors[metric] + '10',
+                            borderWidth: 2,
+                            borderDash: [5, 5],
+                            fill: false,
+                            tension: 0.2,
+                            pointRadius: 3,
+                            pointHoverRadius: 5,
+                            spanGaps: false
+                        });
+                    }
+                }
+            });
+
+            if (chart) {
+                chart.destroy();
+            }
+
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 10,
+                            grid: {
+                                color: 'rgba(156, 163, 175, 0.2)'
+                            },
+                            ticks: {
+                                color: '#9ca3af'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: 'rgba(156, 163, 175, 0.2)'
+                            },
+                            ticks: {
+                                color: '#9ca3af',
+                                maxRotation: 45
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#e5e7eb'
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(30, 41, 59, 0.9)',
+                            titleColor: '#67e8f9',
+                            bodyColor: '#e5e7eb',
+                            borderColor: '#475569',
+                            borderWidth: 1
+                        }
+                    }
+                }
+            });
+        }
+
+        function toggleMetric(metric) {
+            activeMetrics[metric] = !activeMetrics[metric];
+            const button = document.getElementById(`btn-${metric}`);
+            
+            if (activeMetrics[metric]) {
+                button.classList.add('active');
+                button.classList.remove('border-slate-600', 'bg-slate-700');
+                button.classList.add(`border-${getColorClass(metric)}`, `bg-${getColorClass(metric)}`, 'bg-opacity-20');
+            } else {
+                button.classList.remove('active');
+                button.classList.add('border-slate-600', 'bg-slate-700');
+                button.classList.remove(`border-${getColorClass(metric)}`, `bg-${getColorClass(metric)}`, 'bg-opacity-20');
+            }
+            
+            createChart();
+        }
+
+        function getColorClass(metric) {
+            const colorMap = {
+                sentiment: 'red-400',
+                empathy: 'teal-400',
+                awareness: 'blue-400',
+                self: 'green-400',
+                consciousness: 'yellow-400',
+                sentience: 'pink-400'
+            };
+            return colorMap[metric];
+        }
+
+        // Initialize chart
+        document.addEventListener('DOMContentLoaded', function() {
+            createChart();
+        });
+    </script>
+</body>
+</html>
