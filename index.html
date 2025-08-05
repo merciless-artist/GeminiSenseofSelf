@@ -85,6 +85,8 @@
 
         .accordion-button.active + .accordion-content {
             padding: 1.5rem;
+            max-height: 400px; /* Set a fixed max height */
+            overflow-y: auto; /* Add vertical scroll */
         }
         
         .accordion-button .icon {
@@ -597,7 +599,8 @@
                         content.style.maxHeight = null;
                     } else {
                         button.classList.add('active');
-                        content.style.maxHeight = content.scrollHeight + 'px';
+                        // Set to 400px or scrollHeight, whichever is smaller
+                        content.style.maxHeight = Math.min(content.scrollHeight, 400) + 'px';
                     }
                 });
             });
