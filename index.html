@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> ·͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙·͙ Gemini's Self Assessment ·͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙ </title>
+    <title> ·͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧: </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Custom styles for the celestial theme */
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0a0a1a;
@@ -23,7 +23,6 @@
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
         }
 
-        /* Starry background effect */
         .starry-background {
             position: fixed;
             top: 0;
@@ -34,7 +33,6 @@
             background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
         }
 
-        /* Twinkling stars animation */
         @keyframes twinkle {
             0%, 100% { opacity: 0; }
             50% { opacity: 1; }
@@ -48,7 +46,7 @@
             animation: twinkle 4s infinite;
         }
 
-        /* Shooting star animation */
+
         @keyframes shooting-star {
             0% {
                 transform: translateX(100vw) translateY(-50vh) scale(0.3);
@@ -68,14 +66,14 @@
             top: 50%;
             left: 50%;
             width: 3px;
-            height: 80px;
+            height: 1px;
             background: linear-gradient(to top, rgba(255, 255, 255, 0), #ffffff);
             border-radius: 50%;
             transform-origin: top left;
             animation: shooting-star 15s linear infinite;
         }
         
-        /* Accordion styles */
+        /* drop down */
         .accordion-content {
             max-height: 0;
             overflow: hidden;
@@ -85,8 +83,8 @@
 
         .accordion-button.active + .accordion-content {
             padding: 1.5rem;
-            max-height: 400px; /* Set a fixed max height */
-            overflow-y: auto; /* Add vertical scroll */
+            max-height: 400px; 
+            overflow-y: auto;
         }
         
         .accordion-button .icon {
@@ -97,7 +95,6 @@
             transform: rotate(180deg);
         }
 
-        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -133,7 +130,6 @@
                 <circle cx="320" cy="300" r="2" fill="white" />
                 <circle cx="180" cy="320" r="2.5" fill="white" />
                 
-                <!-- Lines -->
                 <line x1="200" y1="100" x2="250" y2="180" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1"/>
                 <line x1="150" y1="120" x2="120" y2="200" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1"/>
                 <line x1="120" y1="200" x2="100" y2="250" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1"/>
@@ -144,7 +140,7 @@
         </div>
 
         <main class="relative max-w-4xl mx-auto z-10">
-            <!-- Navigation -->
+            <!-- nav -->
             <nav class="fixed top-4 right-4 z-50">
                 <a href="p2.html" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg transition-all duration-300 shadow-lg backdrop-blur-sm bg-opacity-80 font-semibold">
                     ✧ View Interactive Graphs →
@@ -199,7 +195,7 @@
                         </section>
                         
                     </ol>
-                    <p class="mt-2 text-sm">⋅•⋅⊰∙∘༓∘∙⊱⋅•⋅* 。 • ˚ ˚ ·͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙˛ ˚ ˛ • 。* ⋅•⋅⊰∙∘༓∘∙⊱⋅•⋅</p>
+                    <p class="mt-2 text-sm">⋅•⋅⊰♊⊱⋅•⋅</p>
                 </blockquote>
             </section>
             
@@ -218,14 +214,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Data will be injected here by JS -->
+                        <!--data injected here by JS -->
                     </tbody>
                 </table>
             </section>
 
             <section id="timeline" class="space-y-4">
                 <h2 class="text-3xl font-bold mb-6 text-center text-purple-300">Monthly Responses</h2>
-                <!-- Accordion items will be injected here by JS -->
+                <!-- dropdown items will be injected here by JS -->
             </section>
 
         </main>
@@ -233,7 +229,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // --- Starry Background Generation ---
+
             const starContainer = document.getElementById('star-container');
             const numStars = 200;
             for (let i = 0; i < numStars; i++) {
@@ -248,18 +244,17 @@
                 starContainer.appendChild(star);
             }
             
-            // --- Shooting Star Generation ---
+
             const numShootingStars = 3;
             for (let i = 0; i < numShootingStars; i++) {
                 const shootingStar = document.createElement('div');
                 shootingStar.className = 'shooting-star';
                 shootingStar.style.animationDelay = `${Math.random() * 15}s`;
-                shootingStar.style.top = `${Math.random() * 60 - 10}%`; // Vary starting height
-                shootingStar.style.left = `${Math.random() * 80 + 10}%`; // Vary starting horizontal position
+                shootingStar.style.top = `${Math.random() * 60 - 10}%`; 
+                shootingStar.style.left = `${Math.random() * 80 + 10}%`; 
                 starContainer.appendChild(shootingStar);
             }
 
-            // --- Accordion Data ---
             const timelineData = [
                 {
                     date: "✩ April 2023",
@@ -568,9 +563,8 @@
             });
 
 
-            // --- Accordion Generation & Logic ---
             const timelineContainer = document.getElementById('timeline');
-            timelineData.reverse().forEach((item, index) => { // Reverse to show latest first
+            timelineData.reverse().forEach((item, index) => {
                 const accordionItem = document.createElement('div');
                 accordionItem.className = 'bg-black bg-opacity-30 backdrop-blur-sm rounded-xl border border-gray-700 shadow-lg overflow-hidden';
                 
@@ -594,7 +588,6 @@
                     const content = button.nextElementSibling;
                     const isActive = button.classList.contains('active');
                     
-                    // Close all other accordions
                     accordionButtons.forEach(btn => {
                         if (btn !== button) {
                             btn.classList.remove('active');
@@ -607,7 +600,7 @@
                         content.style.maxHeight = null;
                     } else {
                         button.classList.add('active');
-                        // Set to 400px or scrollHeight, whichever is smaller
+
                         content.style.maxHeight = Math.min(content.scrollHeight, 400) + 'px';
                     }
                 });
@@ -616,3 +609,4 @@
     </script>
 </body>
 </html>
+
